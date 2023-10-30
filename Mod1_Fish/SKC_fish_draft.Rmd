@@ -66,24 +66,26 @@ Before we begin to analyze the data, we first need to upload our raw data into R
 Once we do that, we can then explore...
 
 **QUESTION: do we want students to jump in using tidyverse right away?
+   Hannah: I am for it. I think switching to it later might make it more confusing. 
 
 ## First, we check and set our working directory(is this something we want students
 to do?)
 
+  In the following code we will tell the computer where we want it to look for 
+  files on our computer. This is called a working directory. We will discuss this
+  more in depth later. --- or will we? Did we do this in module 0? ---
 ```{r set wd}
-getwd()
-setwd()
-list.files()
+current_path = rstudioapi::getActiveDocumentContext()$path
+setwd(dirname(current_path))
 ```
 
 
 ## Load in packages 
-
+ --- Did we already discuss this in module 1? Should we add a description here? ---
+ --- Note: ggplot2 and dplyr are both a part of tidyverse so installing and loading tidyverse will install and load the others too. ---
 ```{r load packages}
-
+if(!require("tidyverse")) install.packages("tidyverse")
 library(tidyverse)
-library(dplyr)
-library(ggplot2)
 ```
 
 
